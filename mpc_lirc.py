@@ -37,6 +37,7 @@ BASE_DIR = os.path.dirname(os.path.abspath(os.path.expanduser(__file__)))
 
 class MopidyController(BaseDaemon):
     DAEMON_NAME = 'mpc_lirc'
+    SERVER_DIR = BASE_DIR
     LOG_DIR = BASE_DIR
     CONF_DIR = BASE_DIR
     PID_DIR = BASE_DIR
