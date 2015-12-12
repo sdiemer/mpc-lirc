@@ -7,7 +7,7 @@
 
 ## Dependencies:
 
-	apt-get install mpd mpc lirc python3 python3-django-web-utils
+	apt-get install mpd mpc lirc python3 python3-lirc python3-django-web-utils
 
 	python3-django-web-utils: https://github.com/sdiemer/django-web-utils
 
