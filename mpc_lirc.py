@@ -1,25 +1,6 @@
 ﻿#!/usr/bin/python3
 # -*- coding: utf-8 -*-
-
-### BEGIN INIT INFO
-# Provides:          mpc-lirc
-# Required-Start:    $local_fs $network
-# Required-Stop:     $local_fs $network
-# Default-Start:     2 3 4 5
-# Default-Stop:      0 1 6
-# Short-Description: mpc-lirc daemon
-# Description:       starts the mpc-lirc daemon
-### END INIT INFO
-
-# This script should be located in /etc/init.d/mpc-lirc
-#   ln -s mpc_lirc.py /etc/init.d/mpc-lirc
-# To make this script start at boot:
-#   update-rc.d mpc-lirc defaults 96 00
-# To remove it use:
-#   update-rc.d -f mpc-lirc remove
-
 # Do not forget to run "mpc update" before using other controls.
-
 import lirc
 import logging
 import os
