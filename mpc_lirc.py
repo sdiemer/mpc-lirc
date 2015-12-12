@@ -31,6 +31,7 @@ from django_web_utils.daemon.base import BaseDaemon
 
 logger = logging.getLogger('mpc_lirc')
 
+USER = 'pi'
 BASE_DIR = os.path.dirname(os.path.abspath(os.path.expanduser(__file__)))
 
 
@@ -126,5 +127,12 @@ class MopidyController(BaseDaemon):
 
 
 if __name__ == '__main__':
+    user = subprocess.getoutput('whoami')
+    if user != USER:
+        # switch from root to requested user
+        print('Using user %s.' % USER)
+        from django_web_utils.system_utils import run_as
+        run_as(USER)
+
     daemon = MopidyController(sys.argv)
     daemon.start()
