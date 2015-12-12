@@ -15,3 +15,6 @@
 ## Notes
 
 	Do not forget to run "mpc update" before trying to play any music with mpd.
+
+	See the following page for lirc configuration:
+	http://alexba.in/blog/2013/01/06/setting-up-lirc-on-the-raspberrypi/

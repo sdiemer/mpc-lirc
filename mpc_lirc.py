@@ -114,6 +114,8 @@ class MopidyController(BaseDaemon):
         elif key == 'KEY_MODE':
             self.play_sound('shutdown')
             self.execute(['sudo', 'shutdown', '-h', 'now'])
+            lirc.deinit()
+            sys.exit(0)
         elif key == 'KEY_CHANNELDOWN':
             i = self.playlist_index - 1
             if i >= 0:
