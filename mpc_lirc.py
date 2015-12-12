@@ -80,6 +80,7 @@ class MopidyController(BaseDaemon):
         self.playlist_index = index
     
     def start_listening(self):
+        logger.info('Using lircrc.conf: %s', os.path.join(BASE_DIR, 'lircrc.conf'))
         lirc.init('mpc_lirc', os.path.join(BASE_DIR, 'lircrc.conf'))
         logger.info('Ready to receive key events.')
         while True:
