@@ -14,9 +14,9 @@
 # This script should be located in /etc/init.d/mpc-lirc
 #   ln -s mpc_lirc.py /etc/init.d/mpc-lirc
 # To make this script start at boot:
-#   update-rc.d mpc_lirc defaults 96 00
+#   update-rc.d mpc-lirc defaults 96 00
 # To remove it use:
-#   update-rc.d -f mpc_lirc remove
+#   update-rc.d -f mpc-lirc remove
 
 # Do not forget to run "mpc update" before using other controls.
 
