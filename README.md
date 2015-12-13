@@ -1,4 +1,4 @@
-﻿# mopidy-lirc
+﻿# mpc-lirc
 
 	Small script to control mpd using mpc with a remote control.
 	It was created for a Raspberry Pi board.
