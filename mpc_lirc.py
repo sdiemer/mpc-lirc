@@ -79,9 +79,9 @@ class MopidyController(BaseDaemon):
         if key == 'KEY_PLAYPAUSE':
             self.execute(['/usr/bin/mpc', 'toggle'])
         elif key == 'KEY_VOLUMEUP':
-            self.execute(['/usr/bin/mpc', 'volume', '+10'])
+            self.execute(['/usr/bin/mpc', 'volume', '+5'])
         elif key == 'KEY_VOLUMEDOWN':
-            self.execute(['/usr/bin/mpc', 'volume', '-10'])
+            self.execute(['/usr/bin/mpc', 'volume', '-5'])
         elif key == 'KEY_PREVIOUS':
             self.execute(['/usr/bin/mpc', 'prev'])
         elif key == 'KEY_NEXT':
