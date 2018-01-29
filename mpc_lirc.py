@@ -22,10 +22,9 @@ class MopidyController(BaseDaemon):
     LOG_DIR = BASE_DIR
     CONF_DIR = BASE_DIR
     PID_DIR = BASE_DIR
-    NEED_GOBJECT = False
     NEED_DJANGO = False
-    #DEFAULTS = dict(LOGGING_LEVEL='INFO')
-    
+    # DEFAULTS = dict(LOGGING_LEVEL='INFO')
+
     def run(self, *args):
         root_dir = os.path.dirname(self.daemon_path)
         if root_dir.endswith('/.'):
@@ -37,7 +36,7 @@ class MopidyController(BaseDaemon):
         # (usefull when no screen is available)
         self.play_sound('online')
         self.start_listening()
-    
+
     def execute(self, cmd):
         p = subprocess.Popen(cmd, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=False)
         out, err = p.communicate()
@@ -49,17 +48,17 @@ class MopidyController(BaseDaemon):
         logger.debug('>>> %s', cmd)
         logger.debug('code: %s | %s', p.returncode, out)
         return p.returncode == 0, out
-    
+
     def play_sound(self, name):
         self.execute(['aplay', 'sounds/%s.wav' % name])
-    
+
     def load_playlist(self, index):
         self.execute(['/usr/bin/mpc', 'clear'])
         loaded, out = self.execute(['/usr/bin/mpc', 'load', 'playlist_%s' % index])
         if loaded:
             self.execute(['/usr/bin/mpc', 'play'])
         self.playlist_index = index
-    
+
     def start_listening(self):
         logger.info('Using lircrc.conf: %s', os.path.join(BASE_DIR, 'lircrc.conf'))
         lirc.init('mpc_lirc', os.path.join(BASE_DIR, 'lircrc.conf'))
@@ -74,7 +73,7 @@ class MopidyController(BaseDaemon):
                 if received:
                     self.play_sound('received')
                     self.key_pressed(received[0])
-    
+
     def key_pressed(self, key):
         if key == 'KEY_PLAYPAUSE':
             self.execute(['/usr/bin/mpc', 'toggle'])
