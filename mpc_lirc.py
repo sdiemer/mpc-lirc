@@ -1,4 +1,4 @@
-﻿#!/usr/bin/python3
+﻿#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 # Do not forget to run "mpc update" before using other controls.
 import lirc
